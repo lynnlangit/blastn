@@ -1,4 +1,5 @@
 path=$1
+echo $path
 curl -O ${path}
 tar -zxvf ${path##*/}
 filename=$(basename -- "$path")
