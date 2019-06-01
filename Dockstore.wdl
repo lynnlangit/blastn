@@ -2,7 +2,7 @@ task blastn {
    String path
 
    command {
-      bash blast.sh ${path}
+      bash blastn.sh ${path}
    }
 
    output {
@@ -10,7 +10,7 @@ task blastn {
    }
 
    runtime {
-      docker: "registry.dockerhub.com/lynnlangit/blastn:latest"
+      docker: "lynnlangit/blastn:latest"
    }
 }
 
