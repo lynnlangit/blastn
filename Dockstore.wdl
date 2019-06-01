@@ -6,11 +6,11 @@ task blastn {
    }
 
    output {
-      File bamstats_report = "out.txt"
+      File blastn_report = "out.txt"
    }
 
    runtime {
-      docker: "registry.dockerhub.com/lynnlangit/blast:latest"
+      docker: "registry.dockerhub.com/lynnlangit/blastn:latest"
    }
 }
 
