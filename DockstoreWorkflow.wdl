@@ -2,7 +2,7 @@ task blastn {
    String path
 
    command {
-      bash /usr/local/bin/blastn-script ${path}
+     bash /usr/local/bin/blastn-script ${path}
    }
 
    output {
@@ -14,7 +14,7 @@ task blastn {
    }
 }
 
-workflow blastnWorkflow {
+workflow blastnTopLevelWorkflow {
    String path
    call blastn {
       input: path=path
