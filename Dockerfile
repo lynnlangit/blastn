@@ -2,7 +2,7 @@
 FROM ubuntu:14.04
 
 # Setup packages
-USER root
+# USER root
 RUN apt-get -m update && apt-get install -y wget tar curl ncbi-blast+
 
 # Get local blastn.sh file
