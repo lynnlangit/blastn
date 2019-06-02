@@ -6,12 +6,8 @@ USER root
 RUN apt-get -m update && apt-get install -y wget tar curl ncbi-blast+
 
 # Get local blastn.sh file
-COPY bin/blastn /usr/local/bin/
-RUN chmod a+x /usr/local/bin/blastn
-
-# switch back to the ubuntu user so this tool (and the files written) are not owned by root
-RUN groupadd -r -g 1000 ubuntu && useradd -r -g ubuntu -u 1000 -m ubuntu
-USER ubuntu
+COPY bin/blastn-script /usr/local/bin/
+RUN chmod a+x /usr/local/bin/blastn-script
 
 # by default /bin/bash is executed
 CMD ["/bin/bash"]
