@@ -2,7 +2,7 @@ task blastn {
    String path
 
    command {
-      bash /usr/local/bin/blastn ${path}
+      bash /usr/local/bin/blastn-script ${path}
    }
 
    output {
