@@ -1,3 +1,5 @@
+[![Binder](https://mybinder.org/badge.svg)](https://mybinder.org/v2/gh/lynnlangit/blastn/master)
+
 # blastn
 Demo of blastn tool for bioinformatics
 
