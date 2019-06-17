@@ -6,6 +6,6 @@ curl -O ${path}
 tar -zxvf ${path##*/}
 filename=$(basename -- "$path")
 filename="${filename%%.*}"
-makeblastdb -in $filename\rep_set.fna -dbtype nucl -out My16sAmplicon && \
-blastn -db My16sAmplicon -query $filename\MyQuery.txt -out out.txt
+makeblastdb -in $filename/rep_set.fna -dbtype nucl -out My16sAmplicon && \
+blastn -db My16sAmplicon -query $filename/MyQuery.txt -out out.txt
 cat out.txt
