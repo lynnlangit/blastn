@@ -1,11 +1,16 @@
 #!/bin/bash
 
-path=$1
-echo $path
-curl -O ${path}
-tar -zxvf ${path##*/}
-filename=$(basename -- "$path")
-filename="${filename%%.*}"
-makeblastdb -in $filename/rep_set.fna -dbtype nucl -out My16sAmplicon && \
-blastn -db My16sAmplicon -query $filename/MyQuery.txt -out out.txt
-cat out.txt
+# Download and unpack the BLAST tutorial data
+if [ ! -f Blast_Tutorial.tar.gz ]; then
+    curl -O https://s3.amazonaws.com/edamame/Blast_Tutorial.tar.gz
+    tar -zxvf Blast_Tutorial.tar.gz
+fi
+
+# Navigate to the Blast_Tutorial directory
+cd Blast_Tutorial
+
+# Create the database from the file downloaded
+/home/jupyter-user/demo/ncbi-blast-2.9.0+/bin/makeblastdb -in rep_set.fna -dbtype nucl -out My16sAmplicon
+
+# Run the BLAST algorithm
+/home/jupyter-user/demo/ncbi-blast-2.9.0+/bin/blastn -db My16sAmplicon -query MyQuery.txt -out out.txt
